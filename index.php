@@ -19,8 +19,8 @@
                     <button type="submit" class="btn btn-primary mt-3">Genera la tua password</button>
                 </form>
                 <?php
-                require_once 'functions.php';
-                
+                include 'functions.php';
+
                 if (isset($_GET['lunghezza'])) {
                     $lunghezza = intval($_GET['lunghezza']);
                     $passwordGenerata = generaPassword($lunghezza);
