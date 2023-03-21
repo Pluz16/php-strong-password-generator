@@ -1,11 +1,16 @@
 <?php
-session_start();
+include 'functions.php';
 
-if (isset($_SESSION['password'])) {
-    $password = $_SESSION['password'];
+if (isset($_GET['lunghezza'])) {
+    $lunghezza = intval($_GET['lunghezza']);
+    $numeri = isset($_GET['numeri']);
+    $lettere = isset($_GET['lettere']);
+    $simboli = isset($_GET['simboli']);
+    $ripetizione = isset($_GET['ripetizione']);
+    $password = generaPassword($lunghezza, $numeri, $lettere, $simboli, $ripetizione);
+    $_SESSION['password'] = $password;
 } else {
-    header('Location: index.php');
-    exit;
+    $password = $_SESSION['password'];
 }
 ?>
 
