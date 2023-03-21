@@ -18,3 +18,29 @@
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">Genera la tua password</button>
                 </form>
+                <?php
+                if (isset($_GET['lunghezza'])) {
+                    $lunghezza = intval($_GET['lunghezza']);
+
+                    function generaPassword($lunghezza) {
+                        $caratteri = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=_+[]{}|;:,.<>?';
+                        $password = '';
+                        for ($i = 0; $i < $lunghezza; $i++) {
+                            $carattere = $caratteri[rand(0, strlen($caratteri) - 1)];
+                            if (ctype_alpha($carattere) && rand(0, 1)) {
+                                $carattere = strtoupper($carattere);
+                            }
+                            $password .= $carattere;
+                        }
+                        return $password;
+                    }
+
+                    $passwordGenerata = generaPassword($lunghezza);
+                    echo "<div class='alert alert-success mt-3' role='alert'>Password generata: <strong>$passwordGenerata</strong></div>";
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
