@@ -25,23 +25,23 @@ if (isset($_GET['lunghezza'])) {
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3 mt-5">
-                <h1 class="text-center mb-4">La tua password generata</h1>
-                <div class="text-center mb-4">
-                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#passwordGenerata" aria-expanded="false" aria-controls="passwordGenerata">
-                        Mostra password
-                    </button>
-                </div>
-                <div class="collapse" id="passwordGenerata">
-                    <div class="alert alert-success mt-3" role="alert">
-                        <strong><?php echo $password; ?></strong>
-                    </div>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <h1 class="text-center mb-4">La tua password</h1>
+            <div class="text-center password" id="password" style="font-size: 36px; cursor: pointer;">
+                ******
             </div>
+            <button class="btn btn-primary mt-3" onclick="window.location.href='index.php'">Genera nuova password</button>
         </div>
     </div>
+</div>
+
+<script>
+document.getElementById("password").addEventListener("click", function() {
+    this.textContent = "<?php echo $password; ?>";
+});
+</script>
 
     <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
