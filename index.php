@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
                 <h1 class="text-center mb-4">Il tuo generatore di password</h1>
-                <form method="GET" action="index.php">
+                <form method="GET" action="password.php">
                     <div class="form-group">
                         <label for="lunghezza">Indica la lunghezza della password</label>
                         <input type="number" class="form-control" id="lunghezza" name="lunghezza" min="4" max="64" required>
